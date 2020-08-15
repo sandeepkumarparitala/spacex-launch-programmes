@@ -12,10 +12,18 @@ Install dependencies with npm i
 
 Now open the browser and navigate to http://localhost:3000 and you get your server rendered React app. You can inspect the page source and see that the html coming from your local server has all the nodes defined in the React app
 
-### `yarn start`
+### `npm start`
 
 Runs the client side app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `npm run test`
+
+Runs the test cases on component renders, API request response data
+
+# Lighthouse Scores
+
+![Lighthouse Scores](/scores.png)

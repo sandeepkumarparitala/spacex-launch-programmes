@@ -25,40 +25,36 @@ function App() {
   const [launchStatus, setLaunchFilter] = useState(null);
   const [landStatus, setLandFilter] = useState(null);
 
-  const updateData = async (filters) => {
-    setIsLoading(true);
-    const { data } = await Axios.get(baseUrl, {
-      params: {
-        launch_year: selectedYear,
-        launch_success: launchStatus,
-        land_success: landStatus,
-        ...filters,
-      },
-    });
-    setIsLoading(false);
-    setProgramData(data);
-  };
-
   const handleStatusFilter = (type, status) => {
     if (type === "launch") {
       setLaunchFilter(status);
-      updateData({ launch_success: status });
       return;
     }
     setLandFilter(status);
-    updateData({ land_success: status });
   };
 
   const handleYearFilter = (e) => {
     e.stopPropagation();
     const year = e.target.dataset.year;
-    updateData({ launch_year: year });
     setYearFilter(year);
   };
 
   useEffect(() => {
+    const updateData = async (filters) => {
+      setIsLoading(true);
+      const { data } = await Axios.get(baseUrl, {
+        params: {
+          launch_year: selectedYear,
+          launch_success: launchStatus,
+          land_success: landStatus,
+          ...filters,
+        },
+      });
+      setIsLoading(false);
+      setProgramData(data);
+    };
     updateData();
-  }, []);
+  }, [selectedYear, landStatus, launchStatus]);
 
   return (
     <AppContainer>
