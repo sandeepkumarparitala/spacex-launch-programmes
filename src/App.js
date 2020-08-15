@@ -57,11 +57,8 @@ function App() {
   };
 
   useEffect(() => {
-    async function initialFetch() {
-      await updateData();
-    }
-    initialFetch();
-  }, [selectedYear, launchStatus, landStatus]);
+    updateData();
+  }, []);
 
   return (
     <AppContainer>
