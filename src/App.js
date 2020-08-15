@@ -8,6 +8,8 @@ import {
   CardsContainer,
   SideBar,
   LoaderAligner,
+  DetailKey,
+  Footer,
 } from "./styles";
 import Card from "./components/card";
 import Axios from "axios";
@@ -91,6 +93,10 @@ function App() {
           )}
         </LaunchInfoSection>
       </ViewSection>
+      <Footer>
+        {" "}
+        <DetailKey>Developed By :</DetailKey> Sandeep Kumar{" "}
+      </Footer>
     </AppContainer>
   );
 }

@@ -149,3 +149,16 @@ export const DetailKey = styled.span`
 `;
 
 export const DetailValue = styled.span``;
+
+export const Footer = styled.div`
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  > span {
+    font-size: 20px;
+  }
+`;
