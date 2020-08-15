@@ -10,6 +10,7 @@ import {
   EventDetails,
   DetailValue,
 } from "../styles";
+import defaultImg from "../assets/default.png";
 
 const Card = (props) => {
   const {
@@ -21,7 +22,7 @@ const Card = (props) => {
     rocket: {
       first_stage: {
         //couldn't find the launch_landing key as shown in design
-        cores: [{ land_success = "" }],
+        cores: [{ land_success }],
       },
     },
     links: { mission_patch_small },
@@ -29,10 +30,21 @@ const Card = (props) => {
   // if landing filter is selected defaulting the value to selected filter value as we couldn't found exact status key in data
   const { landStatus } = props;
   var year = new Date(launch_date_local).getFullYear();
+
+  const verfiedLandStatus =
+    typeof landStatus === "boolean"
+      ? String(landStatus)
+      : typeof land_success !== "boolean"
+      ? "NA"
+      : String(land_success);
+
   return (
     <EventCard>
       <EventLogo>
-        <EventImg data-testid="logo" src={mission_patch_small} />
+        <EventImg
+          data-testid="logo"
+          src={mission_patch_small ? mission_patch_small : defaultImg}
+        />
       </EventLogo>
       <EventDetails>
         <Name data-testid="name">
@@ -56,11 +68,7 @@ const Card = (props) => {
         </DetailWrapper>
         <DetailWrapper>
           <DetailKey>Successfull Landing:</DetailKey>
-          <DetailValue>
-            {typeof landStatus === "boolean"
-              ? String(landStatus)
-              : land_success}
-          </DetailValue>
+          <DetailValue>{verfiedLandStatus}</DetailValue>
         </DetailWrapper>
       </EventDetails>
     </EventCard>
