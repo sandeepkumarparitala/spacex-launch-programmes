@@ -32,10 +32,10 @@ const Card = (props) => {
   return (
     <EventCard>
       <EventLogo>
-        <EventImg src={mission_patch_small} />
+        <EventImg data-testid="logo" src={mission_patch_small} />
       </EventLogo>
       <EventDetails>
-        <Name>
+        <Name data-testid="name">
           {mission_name} #{flight_number}
         </Name>
         <MachineIds>
@@ -48,7 +48,7 @@ const Card = (props) => {
         </MachineIds>
         <DetailWrapper>
           <DetailKey>Launch Year: </DetailKey>
-          <DetailValue>{year}</DetailValue>
+          <DetailValue data-testid="year">{year}</DetailValue>
         </DetailWrapper>
         <DetailWrapper>
           <DetailKey>Successull Launch: </DetailKey>
