@@ -56,9 +56,7 @@ function App() {
     setYearFilter(year);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  useEffect(fetchData, []);
 
   return (
     <AppContainer>
