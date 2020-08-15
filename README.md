@@ -24,6 +24,6 @@ You will also see any lint errors in the console.
 
 Runs the test cases on component renders, API request response data
 
-# Lighthouse Scores
+## Lighthouse Scores
 
 ![Lighthouse Scores](/scores.png)
