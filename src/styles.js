@@ -103,7 +103,7 @@ export const CardsContainer = styled.div`
   @media (min-width: ${breakpoints.SM}) {
     grid-template-columns: repeat(2, minmax(150px, 250px));
   }
-  @media screen and (min-width: ${breakpoints.LG}) {
+  @media screen and (min-width: ${breakpoints.MD}) {
     grid-template-columns: repeat(4, minmax(250px, 250px));
   }
 `;
