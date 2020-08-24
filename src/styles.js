@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const breakpoints = {
   SM: "700px",
-  MD: "1024pxs",
+  MD: "1024px",
   LG: "1440px",
 };
 
