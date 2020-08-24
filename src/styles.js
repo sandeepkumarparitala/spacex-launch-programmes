@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const breakpoints = {
   SM: "700px",
-  MD: "1024",
+  MD: "1024px",
   LG: "1440px",
 };
 
@@ -97,14 +97,12 @@ export const CardsContainer = styled.div`
   display: grid;
   justify-content: space-evenly;
   grid-gap: 20px;
-  @media screen and (max-width: ${breakpoints.SM}) {
-    grid-template-columns: repeat(1, minmax(250px, 250px));
-  }
-  @media (min-width: ${breakpoints.SM}) {
+  grid-template-columns: repeat(1, minmax(250px, 250px));
+  @media only screen and (min-width: ${breakpoints.SM}) {
     grid-template-columns: repeat(2, minmax(150px, 250px));
   }
-  @media screen and (min-width: ${breakpoints.MD}) {
-    grid-template-columns: repeat(4, minmax(250px, 250px));
+  @media only screen and (min-width: ${breakpoints.MD}) {
+    grid-template-columns: repeat(4, minmax(150px, 250px));
   }
 `;
 
